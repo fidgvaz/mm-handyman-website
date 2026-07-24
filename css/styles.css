@@ -436,7 +436,64 @@ button {
 }
 
 /* ==========================================================================
-   7. Responsive Breakpoints
+   7. Projects Page Layout
+   ========================================================================== */
+
+/* ---- Page Introduction ---- */
+
+.page-intro {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+/* ---- Project Gallery ---- */
+
+.project-gallery {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+/* ---- Gallery-specific adjustments to the shared .project-card ---- */
+
+.project-gallery-grid .project-card {
+  scroll-margin-top: var(--space-xl);
+}
+
+.project-gallery-grid .project-card h3 {
+  margin-top: 0;
+}
+
+.project-gallery-grid .project-card p:last-child {
+  margin-bottom: var(--space-md);
+}
+
+/* ---- Project Category Label ---- */
+
+.project-category {
+  display: inline-block;
+  align-self: flex-start;
+  margin: var(--space-md) var(--space-md) var(--space-2xs);
+  padding: var(--space-2xs) var(--space-sm);
+  background-color: var(--color-surface-alt);
+  color: var(--color-accent);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ==========================================================================
+   8. Responsive Breakpoints
    ========================================================================== */
 
 /* ---- Tablet (min-width: 640px) ---- */
@@ -458,6 +515,10 @@ button {
   .project-preview-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .project-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ---- Laptop/Desktop (min-width: 1024px) ---- */
@@ -467,6 +528,10 @@ button {
   }
 
   .project-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
