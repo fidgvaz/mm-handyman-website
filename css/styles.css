@@ -245,16 +245,6 @@ button {
   text-decoration: none;
 }
 
-/*
-  No JS behavior exists yet for the mobile menu (Stage 8 adds it).
-  Since the nav only has two links, both are shown inline at every
-  screen width for now, and the toggle button is hidden so it does
-  not appear as a non-functional control.
-*/
-.nav-toggle {
-  display: none;
-}
-
 .primary-nav ul {
   display: flex;
   gap: var(--space-md);
