@@ -211,3 +211,262 @@ button {
   margin-inline: auto;
   padding-inline: var(--space-md);
 }
+
+/* ==========================================================================
+   6. Header, Footer, and Home Page Layout
+   ========================================================================== */
+
+/* ---- Site Header ---- */
+
+.site-header {
+  background-color: var(--color-card-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.site-title {
+  margin: 0;
+}
+
+.site-title a {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/*
+  No JS behavior exists yet for the mobile menu (Stage 8 adds it).
+  Since the nav only has two links, both are shown inline at every
+  screen width for now, and the toggle button is hidden so it does
+  not appear as a non-functional control.
+*/
+.nav-toggle {
+  display: none;
+}
+
+.primary-nav ul {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 700;
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-sm);
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus-visible {
+  background-color: var(--color-surface-alt);
+}
+
+.primary-nav a[aria-current="page"] {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* ---- Hero ---- */
+
+.hero {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero__media img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.hero__text {
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__media,
+.hero__text {
+  min-width: 0;
+}
+
+/* ---- Services ---- */
+
+.services {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.services__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.services__list li {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ---- Featured Projects Preview ---- */
+
+.featured-projects {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.project-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.project-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: var(--space-md) var(--space-md) var(--space-xs);
+}
+
+.project-card p {
+  margin: 0 var(--space-md) var(--space-sm);
+}
+
+.project-card a {
+  margin: 0 var(--space-md) var(--space-md);
+  align-self: flex-start;
+}
+
+.view-all {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* ---- Contact Strip ---- */
+
+.contact-strip {
+  max-width: var(--max-width);
+  margin: var(--space-lg) auto;
+  padding: var(--space-lg) var(--space-md);
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-strip a {
+  font-weight: 700;
+}
+
+/* ---- Site Footer ---- */
+
+.site-footer {
+  background-color: var(--color-surface-alt);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0 0 var(--space-sm);
+}
+
+.site-footer nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.site-footer nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.site-footer nav a:hover,
+.site-footer nav a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   7. Responsive Breakpoints
+   ========================================================================== */
+
+/* ---- Tablet (min-width: 640px) ---- */
+@media (min-width: 640px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero__media,
+  .hero__text {
+    flex: 1 1 50%;
+  }
+
+  .services__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Laptop/Desktop (min-width: 1024px) ---- */
+@media (min-width: 1024px) {
+  .services__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
