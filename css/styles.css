@@ -1,1 +1,213 @@
-/* Main stylesheet — variables and layout to be added in later stages */
+/* ==========================================================================
+   1. CSS Custom Properties (Design Tokens)
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-bg: #D9EEF7;           /* Main sky-blue page background */
+  --color-card-bg: #FFFFFF;      /* White card/surface background */
+  --color-surface-alt: #F8FAF9;  /* Off-white alternative surface */
+  --color-text: #1F2933;         /* Main body text color */
+  --color-accent: #246B8E;       /* Accent blue for links, buttons, focus */
+  --color-on-accent: #FFFFFF;    /* Text/icon color used on top of accent-colored backgrounds */
+  --color-border: #B8D8E8;       /* Border color for cards and dividers */
+
+  /* Spacing scale (used for margin, padding, gaps) */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Border radius scale */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+  /* Layout */
+  --max-width: 1100px;
+
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.875rem;
+  --line-height-base: 1.5;
+  --line-height-heading: 1.2;
+}
+
+/* ==========================================================================
+   2. CSS Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ==========================================================================
+   3. Base Typography & Elements
+   ========================================================================== */
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 var(--space-md);
+  line-height: var(--line-height-heading);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  margin: 0 0 var(--space-md);
+}
+
+ul,
+ol {
+  margin: 0 0 var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--color-text);
+  color: var(--color-on-accent);
+}
+
+/* ==========================================================================
+   4. Accessibility Utilities
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  padding: var(--space-sm) var(--space-md);
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   5. Shared Layout Foundations
+   ========================================================================== */
+
+/*
+  NOTE: .container is defined here as a reusable width/spacing utility,
+  but the current HTML (index.html, projects.html) does not reference
+  this class anywhere yet. A later layout stage must either:
+    a) add .container wrapper elements to the HTML, or
+    b) apply these same max-width/padding rules directly to the
+       existing header, main, and footer elements.
+  This class is foundational only — it is not wired into markup yet.
+*/
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
