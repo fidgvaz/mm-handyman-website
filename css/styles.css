@@ -274,32 +274,62 @@ button {
 /* ---- Hero ---- */
 
 .hero {
-  max-width: var(--max-width);
-  margin-inline: auto;
-  padding: var(--space-lg) var(--space-md);
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
+  align-items: flex-end;
+  min-height: clamp(420px, 60vh, 680px);
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .hero__media img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  object-position: center center;
+  animation: hero-zoom 14s ease-in-out infinite alternate;
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__media img {
+    animation: none;
+  }
 }
 
 .hero__text {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.hero__text-panel {
   background-color: var(--color-card-bg);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
-  box-shadow: var(--shadow-sm);
-}
-
-.hero__media,
-.hero__text {
-  min-width: 0;
+  box-shadow: var(--shadow-md);
+  width: min(100%, 28rem);
 }
 
 /* ---- Services ---- */
@@ -488,16 +518,6 @@ button {
 
 /* ---- Tablet (min-width: 640px) ---- */
 @media (min-width: 640px) {
-  .hero {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .hero__media,
-  .hero__text {
-    flex: 1 1 50%;
-  }
-
   .services__list {
     grid-template-columns: repeat(2, 1fr);
   }
