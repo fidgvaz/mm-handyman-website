@@ -545,3 +545,40 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ==========================================================================
+   9. Language Selector & Footer Credit
+   ========================================================================== */
+
+.site-header__nav-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.language-switch a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.language-switch a[aria-current="page"] {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.language-switch span[aria-hidden="true"] {
+  color: var(--color-border);
+}
+
+.site-footer__credit {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+}
