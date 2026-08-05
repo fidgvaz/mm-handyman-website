@@ -95,4 +95,4 @@ M&M Handyman serves Sacramento and surrounding areas.
 
 ## Developer
 
-Website created by Fidel Vázquez.
+Website created by Fidel G Vázquez.
