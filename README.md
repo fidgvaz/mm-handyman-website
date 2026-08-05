@@ -1,30 +1,26 @@
-# M&M Handyman Website - In Progress
+# M&M Handyman Website — In Progress
 
-A responsive bilingual website created for M&M Handyman, a home repair and improvement business serving Sacramento and surrounding areas.
+This is a bilingual website for M&M Handyman, a home repair and improvement business serving Sacramento and nearby areas.
 
-The website presents the company’s services, completed projects, and public contact information in both English and Spanish.
+The website is designed to help customers learn about the services offered, view completed projects, and contact the business by phone, text message, or email.
 
-## Project Status
+## About This Project
 
-The website is currently in development and awaiting final customer review before deployment to Hostinger.
+I am building this project as a community-service contribution and as part of my professional portfolio as a Computer Science student.
 
-The customer has reviewed preview images, but the complete website has not yet been reviewed in its deployed environment.
+It has given me practical experience working with a real business, organizing bilingual content, improving accessibility, managing images, testing responsive layouts, and using Git and GitHub throughout the development process.
 
-## Project Overview
+The website is still in development while the business owner reviews the content and provides the remaining information needed before deployment.
 
-This project was developed to provide M&M Handyman with a clear and professional online presence. Visitors can review available services, explore examples of completed work, switch between English and Spanish, and contact the business by phone, text message, or email.
+## Main Features
 
-## Features
-
-- English and Spanish website pages
-- Responsive layout for desktop, tablet, and mobile devices
-- Home page with business introduction and service overview
-- Project gallery featuring completed handyman work
-- Direct phone, text message, and email contact links
-- Semantic HTML structure
-- Reusable CSS styles and responsive design rules
-- Lightweight JavaScript for dynamic page behavior
-- Local images and assets without third-party dependencies
+- English and Spanish pages
+- Responsive design for phones, tablets, and desktop computers
+- Home page with business information and services
+- Project gallery with completed work
+- Phone, text message, and email contact links
+- Local website images and assets
+- Simple HTML, CSS, and JavaScript structure
 
 ## Services Presented
 
