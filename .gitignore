@@ -4,9 +4,36 @@
 # Windows system files
 Thumbs.db
 
-# Editor/IDE folders
+# Editor and IDE folders
 .vscode/
 .idea/
 
 # Log files
 *.log
+
+# Backup and archive files
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# Environment and credential files
+.env
+.env.*
+*.pem
+*.key
+
+# Private or working folders
+private/
+backups/
+source-photos/
+original-photos/
+customer-files/
+
+# Large source image formats
+*.heic
+*.HEIC
+*.raw
+*.RAW
+*.psd
